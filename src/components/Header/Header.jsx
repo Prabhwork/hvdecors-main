@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-import { RiLeafLine } from "react-icons/ri";
+
 import { FaWhatsapp } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
