@@ -1,0 +1,89 @@
+:root {
+  --primary: #5e3a1f;
+  --accent: #d4a762;
+  --bg-light: #fdf8f2;
+  --text-dark: #333;
+  --text-light: #fff;
+}
+
+/* Top hero background */
+.brand__hero {
+  background: url('../assets/all-images/curtain8.jpg') center center/cover no-repeat;
+  padding: 120px 0 90px;
+  color: var(--text-light);
+  text-align: center;
+  position: relative;
+}
+
+.brand__hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.brand__hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.brand__hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.brand__hero p {
+  font-size: 1.1rem;
+  color: #eee0d0;
+  margin-top: 1rem;
+}
+
+/* Brand grid section */
+.brand__section {
+  background-color: var(--bg-light);
+  padding: 3rem 0;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.brand-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.brand-card:hover {
+  transform: translateY(-6px);
+}
+
+.brand-card h4 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+}
+
+.brand-card p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .brand__hero h2 {
+    font-size: 2rem;
+  }
+
+  .brand__hero p {
+    font-size: 1rem;
+  }
+}

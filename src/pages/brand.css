@@ -1,0 +1,36 @@
+/* src/components/UI/BrandsSlider.css */
+
+.brands-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.brands-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.brands-slider {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.brand-image {
+  max-width: 120px;
+  max-height: 70px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.brand-image:hover {
+  transform: scale(1.1);
+}

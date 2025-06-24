@@ -1,0 +1,316 @@
+.product-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+  padding: 50px;
+  background-color: #653e2f;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  position: relative;
+  width: 380px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Name always visible on photo */
+.name-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+ font-family: 'Times New Roman', Times, serif;
+  color: rgb(255, 249, 249);
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 5; /* Ensure it's above the overlay */
+  text-align: center;
+  pointer-events: none; /* Prevent hover from affecting this element */
+   color: saddlebrown;
+    background-color: #d4b4a2;
+}
+.product-card:hover .name-tag {
+  display: none;
+}
+
+
+
+/* Overlay only shows on hover */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ 
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  padding: 20px;
+  transform: scale(0);
+  transform-origin: bottom right; /* or top left / center center */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1;
+  box-shadow: 0 30px 10px rgba(0, 0, 0, 0.9); /* initial no shadow */
+}
+
+.product-card:hover .overlay {
+  transform: scale(1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* visible on hover */
+}
+
+
+.overlay p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+h2{
+    
+    color: white;
+    margin-bottom: 24px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.inquiry-btn {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  background-color: white;
+  color: #653e2f;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+
+
+.inquiry-btn:hover {
+  background-color: #fff2e6;
+  color: #653e2f;
+}
+
+.product-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 0;
+  background-color: #f2f2f2;
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+@media only screen and (max-width: 567px) {
+.product-filters { 
+  width: 105%;
+}
+}
+.filter-btn.active {
+  background-color: #814f32; /* brown theme */
+  color: white;
+}
+
+.filter-btn:hover {
+  background-color: #d4b4a2;
+  color: #4d2d1a;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .product-section {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90vw; /* full width with margin */
+    height: auto;
+  }
+
+  .product-image {
+    height: 250px; /* adjust image height */
+  }
+
+  .name-tag {
+    font-size: 20px;
+    padding: 8px 16px;
+    bottom: 10px;
+     color: saddlebrown;
+    background-color: #d4b4a2;
+  }
+
+  .overlay {
+    padding: 15px;
+  }
+
+  .overlay p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .inquiry-btn {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .product-filters {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 567px) {
+  .product-section {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .product-card {
+    width: 100%;
+    height: auto;
+    max-height: 350px; /* Adjust as needed */
+  }
+
+  .product-image {
+    height: 200px; /* Fixed height for consistency */
+  }
+
+  .name-tag {
+    font-size: 18px;
+    padding: 6px 12px;
+    bottom: 8px;
+    color: saddlebrown;
+    background-color: #d4b4a2;
+  }
+
+  /* Make overlay content more compact */
+  .overlay {
+    padding: 10px;
+    justify-content: center; /* Center content vertically */
+  }
+
+  .overlay h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .overlay p {
+    font-size: 12px;
+    margin-bottom: 8px;
+    /* Limit description to a few lines with ellipsis if needed */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .inquiry-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  /* Specific adjustment for products with short descriptions */
+  .product-card.short-desc .overlay {
+    justify-content: flex-end; /* Push content to bottom */
+    padding-bottom: 15px;
+  }
+
+  .product-card.short-desc .overlay p {
+    -webkit-line-clamp: 2; /* Show fewer lines for short descriptions */
+  }
+}
+/* Awning Layout Styles */
+.awnings-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  align-items: flex-start;
+}
+
+.awnings-img {
+  width: 550px;
+  
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.awnings-content {
+  flex: 1;
+}
+
+.awnings-content h2 {
+  font-size: 32px;
+  color: #8b5a2b;
+  margin-bottom: 20px;
+}
+
+.feature-block {
+  margin-bottom: 20px;
+}
+
+.feature-block h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.feature-block p {
+  font-size: 16px;
+  color: #555;
+}
