@@ -33,9 +33,9 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Contact</h4>
           <ul>
-            <li><IoMdPin /> 123 Interior Lane, Delhi, India</li>
-            <li><FaPhoneAlt /> +91 99103 20803</li>
-            <li><FaEnvelope /> info@hvdecors.com</li>
+            
+            <li><FaPhoneAlt /> +91 83778 75838</li>
+            <li><FaEnvelope /> hvdecors@gmail.com</li>
           </ul>
 
           <Link to="/contact">

@@ -76,7 +76,7 @@ const toggleMenu = () => setMenuOpen(!menuOpen);
             <Link to="/home" onClick={toggleMenu}>Home</Link>
             <Link to="/about" onClick={toggleMenu}>About us</Link>
             <Link to="/products" onClick={toggleMenu}>Products</Link>
-            
+            <Link to="/services" onClick={toggleMenu}>Services</Link>
 
             <hr />
             <Link to="/brands" onClick={toggleMenu}>Brands</Link>
