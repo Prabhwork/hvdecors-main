@@ -13,7 +13,7 @@ function App() {
       const timer = setTimeout(() => {
         setLoading(false);
         sessionStorage.setItem("visited", "true");
-      }, 4000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [loading]);
