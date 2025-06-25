@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { IoMdPin } from "react-icons/io";
-import logo from "../../assets/all-images/logo.png"; // Adjust the path to your logo
+import logo from "../../assets/all-images/logo.png";
 import "../../styles/footer.css";
 
 const Footer = () => {
@@ -33,20 +32,24 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Contact</h4>
           <ul>
-            
             <li><FaPhoneAlt /> +91 83778 75838</li>
             <li><FaEnvelope /> hvdecors@gmail.com</li>
           </ul>
 
           <Link to="/contact">
-  <button className="enquire-btn">Enquire Now</button>
-</Link>
-
+            <button
+              className="enquire-btn"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              Enquire Now
+            </button>
+          </Link>
         </div>
       </div>
+
       <div className="footer-bottom-text">
-  © {new Date().getFullYear()} HV Decors — Enhancing Interiors, One Window at a Time.
-</div>
+        © {new Date().getFullYear()} HV Decors — Enhancing Interiors, One Window at a Time.
+      </div>
     </footer>
   );
 };

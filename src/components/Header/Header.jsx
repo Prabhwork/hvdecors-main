@@ -84,7 +84,7 @@ const toggleMenu = () => setMenuOpen(!menuOpen);
           </div>
 
           <div className="bottom-section">
-            <p>+91 99103 20803 | <a href="mailto:hvdecors@gmail.com">hvdecors@gmail.com</a></p>
+            <p>+91 83778 75838 | <a href="mailto:hvdecors@gmail.com">hvdecors@gmail.com</a></p>
 
           </div>
         </div>

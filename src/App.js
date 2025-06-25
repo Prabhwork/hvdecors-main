@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./components/Layout/Layout";
-import "./App.css"; // Import your custom loader styles
+import "./App.css";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    const alreadyVisited = sessionStorage.getItem("visited");
+    return !alreadyVisited;
+  });
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
+    if (loading) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem("visited", "true");
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
   return (
     <>

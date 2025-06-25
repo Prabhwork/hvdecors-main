@@ -196,9 +196,11 @@ const Background = () => {
   ];
 
   const filteredProducts = products.filter(p => p.category === activeCategory);
-
+const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
-    <div className="background-wrapper">
+     <div className="background-wrapper">
       <div className="product-filters">
         {['Blinds', 'Curtain Systems', 'Awnings', 'Motorization'].map(category => (
           <button
@@ -222,6 +224,9 @@ const Background = () => {
                 <p>{feature.description}</p>
               </div>
             ))}
+            <Link to="/contact">
+              <button className="enquire-btn" onClick={handleScrollToTop}>Enquire Now →</button>
+            </Link>
           </div>
         </div>
       ) : (
@@ -234,9 +239,8 @@ const Background = () => {
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
                 <div className="buttons">
-              
                   <Link to="/contact">
-                    <button className="enquire-btn">Enquire Now →</button>
+                    <button className="enquire-btn" onClick={handleScrollToTop}>Enquire Now →</button>
                   </Link>
                 </div>
               </div>
