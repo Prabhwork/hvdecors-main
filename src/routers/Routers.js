@@ -10,6 +10,7 @@ import Brand from "../pages/Brand";
 import ProductInventory from "../pages/ProductInventory";
 import Services from "../pages/Services";
 import BrandMain from "../pages/BrandMain";
+import Gallery from "../pages/Gallery";
 
 const Routers = () => {
   return (
@@ -23,6 +24,7 @@ const Routers = () => {
       <Route path="/products" element={<ProductInventory/>} />
       <Route path="/services" element={<Services />} />
       <Route path="/brands" element={<BrandMain />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="*" element={<NotFound />} />
 
    

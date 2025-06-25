@@ -23,7 +23,7 @@ import curtain7 from '../../assets/all-images/curtain7.jpg';
 import curtain8 from '../../assets/all-images/curtain8.jpg';
 import curtain9 from '../../assets/all-images/curtain9.jpg';
 
-import awning1 from '../../assets/all-images/aw.jpg'; // Replace with correct image
+
 import motor1 from '../../assets/all-images/moter.jpg'; // Replace with correct image
 
 const Background = () => {
@@ -143,29 +143,7 @@ const Background = () => {
     },
 
     // ----- Awnings (with special layout) -----
-    {
-      name: 'Awnings',
-      category: 'Awnings',
-      image: awning1,
-      features: [
-        {
-          heading: 'Embrace Outdoor Comfort and Style',
-          description: 'Step into a world of outdoor comfort and style with our Awnings, a versatile shading solution that elevates your outdoor living spaces.',
-        },
-        {
-          heading: 'Protection from the Elements',
-          description: 'Awnings provide shade and shelter, protecting you from harsh sun rays, rain showers, and UV radiation.',
-        },
-        {
-          heading: 'Enhanced Energy Efficiency',
-          description: 'Experience reduced cooling costs as Awnings prevent excessive heat from entering your home.',
-        },
-        {
-          heading: 'Versatility for Any Space',
-          description: 'Whether it’s a patio, deck, or window, our Awnings come in various styles and sizes to suit your needs.',
-        },
-      ],
-    },
+    
 
     // ----- Motorization -----
     {
@@ -202,7 +180,7 @@ const handleScrollToTop = () => {
   return (
      <div className="background-wrapper">
       <div className="product-filters">
-        {['Blinds', 'Curtain Systems', 'Awnings', 'Motorization'].map(category => (
+        {['Blinds', 'Curtain Systems', 'Motorization'].map(category => (
           <button
             key={category}
             className={`filter-btn ${activeCategory === category ? 'active' : ''}`}

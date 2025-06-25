@@ -1,0 +1,186 @@
+/* ====== Color Variables ====== */
+:root {
+  --primary: #5e3a1f;
+  --secondary: #3a2511;
+  --accent: #d4a762;
+  --text-dark: #1e1e1e;
+  --text-light: #f8f9fa;
+  --light-bg: #fdf8f3;
+}
+
+/* ====== Typography ====== */
+.section__subtitle {
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.section__title {
+  color: var(--secondary);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+
+.section__title1 {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.section__description1 {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  max-width: 700px;
+  margin: 1rem auto 0;
+}
+
+.section__description {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* ====== Hero Section ====== */
+.about__hero-section {
+  background: url('../assets/all-images/aw.jpg') center center/cover no-repeat;
+  padding: 140px 0 120px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.about__hero-section .container,
+.about__hero-section h1,
+.about__hero-section p {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====== Our Story Section ====== */
+.our-story-section {
+  background-color: #fff;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.about__section-item {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about__section-item p {
+  color: var(--text-dark);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about__section-item i {
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+/* ====== Why Choose Us Section ====== */
+.choose-us-section {
+  background-color: var(--light-bg);
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.choose-us-section p {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.list-unstyled {
+  margin-top: 1.5rem;
+  padding-left: 0;
+}
+
+.list-unstyled li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.list-unstyled i {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-right: 0.6rem;
+}
+
+/* ====== Responsive ====== */
+@media only screen and (max-width: 992px) {
+  .section__title, .section__title1 {
+    font-size: 2.2rem;
+  }
+
+  .section__description1,
+  .section__description {
+    font-size: 1.05rem;
+  }
+
+  .about__section-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .list-unstyled li {
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section__title, .section__title1 {
+    font-size: 2rem;
+  }
+
+  .section__subtitle {
+    font-size: 1rem;
+  }
+
+  .section__description1,
+  .section__description {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section__title, .section__title1 {
+    font-size: 1.8rem;
+  }
+
+  .section__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .section__description1 {
+    font-size: 0.95rem;
+  }
+}

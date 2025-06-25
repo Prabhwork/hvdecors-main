@@ -36,12 +36,12 @@ const Footer = () => {
             <li><FaEnvelope /> hvdecors@gmail.com</li>
           </ul>
 
-          <Link to="/contact">
+          <Link to="/gallery">
             <button
               className="enquire-btn"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              Enquire Now
+              Gallery
             </button>
           </Link>
         </div>
