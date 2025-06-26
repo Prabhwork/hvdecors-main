@@ -30,12 +30,13 @@
 }
 
 .service__item {
+  
   position: relative;
   padding: 2.5rem 2rem;
   border-radius: 20px;
    height: 100%;
   min-height: var(--card-height);
-  background: linear-gradient(145deg, var(--accent-color), #fff);
+  background-color: rgb(235, 228, 215)!important;
   box-shadow: 0 15px 35px rgba(60, 39, 7, 0.1);
   text-align: center;
   overflow: hidden;

@@ -5,9 +5,9 @@ import '../styles/gallery.css';
 import blind1 from '../assets/all-images/blind1.jpg';
 import blind2 from '../assets/all-images/blind2.jpg';
 import blind3 from '../assets/all-images/blind3.jpg';
-import blind4 from '../assets/all-images/blind4.jpg';
+import blind4 from '../assets/all-images/blind9.jpg';
 import blind5 from '../assets/all-images/blind5.jpg';
-import blind6 from '../assets/all-images/blind6.jpg';
+import blind6 from '../assets/all-images/blind8.jpg';
 
 import gallery1 from '../assets/all-images/gallery1.jpg';
 import gallery2 from '../assets/all-images/gallery2.jpg';

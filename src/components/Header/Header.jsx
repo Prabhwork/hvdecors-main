@@ -63,9 +63,7 @@ const Header = () => {
           </div>
 
           <div className="menu-links">
-             <Button className="button1">
-                <Link to="/gallery" onClick={toggleMenu}>Gallery</Link>
-              </Button>
+            
             <Link to="/home" onClick={toggleMenu}>Home</Link>
             <Link to="/about" onClick={toggleMenu}>About us</Link>
             <Link to="/products" onClick={toggleMenu}>Products</Link>
@@ -73,7 +71,7 @@ const Header = () => {
 
             <hr />
             <Link to="/brands" onClick={toggleMenu}>Brands</Link>
-            {/* ✅ Added Gallery */}
+            <Link to="/gallery" onClick={toggleMenu}>Gallery</Link> {/* ✅ Added Gallery */}
             <Link to="/contact" onClick={toggleMenu}>Contact Us</Link>
           </div>
 

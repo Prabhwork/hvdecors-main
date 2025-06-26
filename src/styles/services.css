@@ -1,15 +1,17 @@
 :root {
-  --primary: #5e3a1f;        /* Deep brown */
+  --primary: #41220b;        /* Deep brown */
   --secondary: #3a2511;      /* Darker brown */
   --accent: #d4a762;         /* Gold accent */
   --bg-light: #f9f7f3;       /* Light background */
   --text-dark: #2b2d42;
   --text-light: #ffffff;
+  
 }
 
 /* ===== Hero Section with Background ===== */
 .services__hero {
   background: url('../assets/all-images/zebra.jpg') center center/cover no-repeat;
+  background-color: #d4a762;
   padding: 130px 0 90px;
   position: relative;
   text-align: center;

@@ -7,6 +7,9 @@ import ServicesList from "../components/UI/ServicesList";
 const Services = () => {
   return (
     <Helmet title="Services">
+      <div className="background-main">
+       
+     
       {/* Top Hero Section with Background */}
       <section className="services__hero">
         <Container>
@@ -24,6 +27,7 @@ const Services = () => {
           </Row>
         </Container>
       </section>
+       </div>
     </Helmet>
   );
 };

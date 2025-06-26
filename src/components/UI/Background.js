@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './background.css';
+import backgroundVideo from '../../assets/all-images/background.mp4';
 
 
 import roller from '../../assets/all-images/roller.jpg';
@@ -178,7 +179,15 @@ const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
+    
      <div className="background-wrapper">
+      <div className="video-background">
+        <video autoPlay loop muted playsInline>
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="video-overlay"></div>
+      </div>
       <div className="product-filters">
         {['Blinds', 'Curtain Systems', 'Motorization'].map(category => (
           <button
