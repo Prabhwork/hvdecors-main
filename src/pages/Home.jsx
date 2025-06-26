@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 import ServicesList from "../components/UI/ServicesList";
 import Background from "../components/UI/Background";
 import Brand from "./Brand";
-import Gallery from "./Gallery";
+
 import GalleryMain from "./GalleryMain";
 
 const Home = () => {
