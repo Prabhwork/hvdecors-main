@@ -330,13 +330,13 @@ body, html {
   border: none;
   border-radius: 50px;
   background: linear-gradient(135deg, #8b5a2b 0%, #d4a762 100%);
-  color: white;
+  color: white!important;
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 20px;
+
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 1px;
+ 
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -393,12 +393,18 @@ body, html {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .button {
+  .button1 {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 }
-
+@media (max-width: 576px) {
+  .button1 {
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 200px;
+  }
+}
 /* Optional: Add a subtle pulse animation to attract attention */
 @keyframes pulse {
   0% { transform: scale(1); }
@@ -406,6 +412,6 @@ body, html {
   100% { transform: scale(1); }
 }
 
-.button.pulse {
+.button1.pulse {
   animation: pulse 2s infinite;
 }
