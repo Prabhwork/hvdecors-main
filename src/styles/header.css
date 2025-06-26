@@ -139,16 +139,16 @@ body, html {
   font-size: 2rem;
   padding: 12px 20px;
   color: #fff;
-  background-color: transparent;
+  
   border-radius: 8px;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
 .hamburger-menu:hover {
-  color: var(--primary-dark);
+  color: wheat;
   transform: scale(1.1);
-  text-shadow: 0 0 5px rgba(212, 167, 98, 0.3);
+ 
 }
 
 /* Dropdown Menu (Sidebar Style) */
@@ -214,7 +214,7 @@ body, html {
 
 .dropdown-menu-custom .bottom-section a {
   margin-right: 1rem;
-  color: #5d3c2c;
+  color: #1f1e1e;
   font-size: 1.3rem;
 }
 
