@@ -124,6 +124,7 @@ h2{
   background-color: #f2f2f2;
 }
 
+/* Filter Button Styles with iOS Fix */
 .filter-btn {
   background-color: transparent;
   border: none;
@@ -132,7 +133,47 @@ h2{
   padding: 10px 25px;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
+  color: #000000;
+  -webkit-tap-highlight-color: transparent; /* Removes the tap highlight */
+  -webkit-appearance: none; /* Removes default iOS styling */
+}
+
+/* Active/Hover States */
+.filter-btn.active {
+  background-color: #814f32;
+  color: white;
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: #d4b4a2;
+  color: #4d2d1a;
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+  .filter-btn {
+    /* Additional iOS-specific fixes */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    tap-highlight-color: transparent;
+  }
+  
+  /* Prevent blue flash on tap */
+  .filter-btn:active {
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .filter-btn.active:active {
+    background-color: #814f32; /* Maintain active color even when tapped */
+  }
+}
+
+/* Focus State - for accessibility */
+.filter-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(129, 79, 50, 0.5);
 }
 @media only screen and (max-width: 567px) {
 .product-filters { 

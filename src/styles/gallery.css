@@ -1,3 +1,122 @@
+/* Gallery Page Base Styles */
+.gallery-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+/* Hero Section */
+.gallery-hero {
+  background-size: cover;
+  background-position: center;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+  color: white;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Product Filters */
+.product-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 0;
+  background-color: #f2f2f2;
+  flex-wrap: wrap;
+}
+
+/* Filter Button Styles with iOS Fix */
+.filter-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000000;
+  -webkit-tap-highlight-color: transparent; /* Removes the tap highlight */
+  -webkit-appearance: none; /* Removes default iOS styling */
+}
+
+/* Active/Hover States */
+.filter-btn.active {
+  background-color: #814f32;
+  color: white;
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: #d4b4a2;
+  color: #4d2d1a;
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+  .filter-btn {
+    /* Additional iOS-specific fixes */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    tap-highlight-color: transparent;
+  }
+  
+  /* Prevent blue flash on tap */
+  .filter-btn:active {
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .filter-btn.active:active {
+    background-color: #814f32; /* Maintain active color even when tapped */
+  }
+}
+
+/* Focus State - for accessibility */
+.filter-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(129, 79, 50, 0.5);
+}
+
+.filter-btn.active {
+  background-color: #814f32;
+  color: white;
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: #d4b4a2;
+  color: #4d2d1a;
+}
+
+/* Product Section */
 .product-section {
   display: flex;
   justify-content: center;
@@ -16,7 +135,7 @@
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -29,69 +148,67 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
 
-/* Name always visible on photo */
+/* Name Tag */
 .name-tag {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
- font-family: 'Times New Roman', Times, serif;
-  color: rgb(255, 249, 249);
+  font-family: 'Times New Roman', Times, serif;
   padding: 10px 24px;
   border-radius: 25px;
   font-weight: bold;
   font-size: 20px;
-  z-index: 5; /* Ensure it's above the overlay */
+  z-index: 5;
   text-align: center;
-  pointer-events: none; /* Prevent hover from affecting this element */
-   color: saddlebrown;
-    background-color: #d4b4a2;
+  pointer-events: none;
+  color: #8B4513;
+  background-color: #d4b4a2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .product-card:hover .name-tag {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-
-
-/* Overlay only shows on hover */
+/* Overlay */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
- 
   background: rgba(0, 0, 0, 0.35);
   color: white;
   padding: 20px;
-  transform: scale(0);
-  transform-origin: bottom right; /* or top left / center center */
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  z-index: 1;
-  box-shadow: 0 30px 10px rgba(0, 0, 0, 0.9); /* initial no shadow */
+  z-index: 2;
 }
 
 .product-card:hover .overlay {
-  transform: scale(1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* visible on hover */
+  opacity: 1;
 }
 
+.overlay h2 {
+  color: white;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+}
 
 .overlay p {
   font-size: 14px;
   margin-bottom: 15px;
+  line-height: 1.5;
 }
-h2{
-    
-    color: white;
-    margin-bottom: 24px;
-}
+
 .buttons {
   display: flex;
   gap: 10px;
@@ -108,93 +225,151 @@ h2{
   transition: all 0.3s;
 }
 
-
-
 .inquiry-btn:hover {
   background-color: #fff2e6;
-  color: #653e2f;
+  transform: translateY(-2px);
 }
 
-.product-filters {
+/* Image Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-  padding: 30px 0;
-  background-color: #f2f2f2;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.filter-btn {
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 25px;
-  border-radius: 30px;
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  color: #000;
+  font-size: 28px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
 }
-@media only screen and (max-width: 567px) {
-.product-filters { 
-  width: 105%;
-}
-}
-.filter-btn.active {
-  background-color: #814f32; /* brown theme */
+
+.close-btn:hover {
+  background-color: #ff3333;
   color: white;
+  transform: rotate(90deg);
 }
 
-.filter-btn:hover {
-  background-color: #d4b4a2;
-  color: #4d2d1a;
+/* Awning Layout Styles */
+.awnings-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-/* Responsive adjustments */
+.awnings-img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.awnings-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1024px) {
+  .product-section {
+    padding: 30px;
+    gap: 15px;
+  }
+  
+  .product-card {
+    width: 320px;
+    height: 300px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .gallery-hero {
+    height: 280px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
   .product-section {
     padding: 20px;
-    flex-direction: column;
-    align-items: center;
   }
 
   .product-card {
-    width: 90vw; /* full width with margin */
-    height: auto;
-  }
-
-  .product-image {
-    height: 250px; /* adjust image height */
+    width: 100%;
+    max-width: 380px;
+    height: 350px;
   }
 
   .name-tag {
-    font-size: 20px;
+    font-size: 18px;
     padding: 8px 16px;
-    bottom: 10px;
-     color: saddlebrown;
-    background-color: #d4b4a2;
+    bottom: 15px;
   }
 
   .overlay {
     padding: 15px;
   }
 
+  .overlay h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
   .overlay p {
     font-size: 13px;
-    margin-bottom: 10px;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .inquiry-btn {
-    width: 100%;
-    padding: 8px 0;
   }
 
   .product-filters {
-    flex-wrap: wrap;
     gap: 10px;
     padding: 20px 10px;
   }
@@ -203,158 +378,129 @@ h2{
     padding: 8px 16px;
     font-size: 14px;
   }
+  
+  .awnings-layout {
+    padding: 20px;
+    gap: 20px;
+  }
 }
-@media only screen and (max-width: 567px) {
+
+@media only screen and (max-width: 480px) {
+  .gallery-hero {
+    height: 220px;
+  }
+  
   .product-section {
     padding: 15px;
-    width: 100%;
   }
 
   .product-card {
-    width: 100%;
-    height: auto;
-    max-height: 350px; /* Adjust as needed */
-  }
-
-  .product-image {
-    height: 200px; /* Fixed height for consistency */
+    height: 300px;
   }
 
   .name-tag {
-    font-size: 18px;
+    font-size: 16px;
     padding: 6px 12px;
-    bottom: 8px;
-    color: saddlebrown;
-    background-color: #d4b4a2;
-  }
-
-  /* Make overlay content more compact */
-  .overlay {
-    padding: 10px;
-    justify-content: center; /* Center content vertically */
-  }
-
-  .overlay h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .overlay p {
-    font-size: 12px;
-    margin-bottom: 8px;
-    /* Limit description to a few lines with ellipsis if needed */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .buttons {
     flex-direction: column;
-    gap: 6px;
-    margin-top: 10px;
   }
 
   .inquiry-btn {
-    padding: 8px 12px;
-    font-size: 14px;
     width: 100%;
   }
-
-  /* Specific adjustment for products with short descriptions */
-  .product-card.short-desc .overlay {
-    justify-content: flex-end; /* Push content to bottom */
-    padding-bottom: 15px;
-  }
-
-  .product-card.short-desc .overlay p {
-    -webkit-line-clamp: 2; /* Show fewer lines for short descriptions */
-  }
-}
-/* Awning Layout Styles */
-.awnings-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding: 40px;
-  align-items: flex-start;
-}
-
-.awnings-img {
-  width: 550px;
   
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+/* Image Modal Styles */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-.awnings-content {
-  flex: 1;
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
 }
 
-.awnings-content h2 {
-  font-size: 32px;
-  color: #8b5a2b;
-  margin-bottom: 20px;
-}
-
-.feature-block {
-  margin-bottom: 20px;
-}
-
-.feature-block h4 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px;
-  color: #333;
-}
-
-.feature-block p {
-  font-size: 16px;
-  color: #555;
-}
-
-.product-image {
- 
-  object-fit: cover; /* or 'cover' depending on layout */
-  display: block;
-  image-rendering: auto;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-}
-/* Hero Section */
-.gallery-hero {
-  background-size: cover;
-  background-position: center;
-  height: 340px;
+/* Cross (X) Button - Updated */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 0.3s ease;
 }
 
-.hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
 }
 
-.hero-title {
-  font-size: 40px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
+.close-button::before,
+.close-button::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
 }
 
-.hero-subtitle {
-  font-size: 18px;
-  color: #eee;
+.close-button::before {
+  transform: rotate(45deg);
+}
+
+.close-button::after {
+  transform: rotate(-45deg);
+}
+
+.enlarged-image {
+  max-width: 100%;
+  max-height: 90vh;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+/* Responsive adjustments for the close button */
+@media (max-width: 768px) {
+  .close-button {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .close-button::before,
+  .close-button::after {
+    width: 18px;
+  }
 }

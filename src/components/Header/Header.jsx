@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Container } from "reactstrap";
+import { Button, Container } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import { FaWhatsapp } from "react-icons/fa";
@@ -37,6 +37,7 @@ const Header = () => {
                   style={{ height: "50px", width: "auto" }}
                 />
               </Link>
+             
             </div>
 
             <a
@@ -62,6 +63,9 @@ const Header = () => {
           </div>
 
           <div className="menu-links">
+             <Button className="button1">
+                <Link to="/gallery" onClick={toggleMenu}>Gallery</Link>
+              </Button>
             <Link to="/home" onClick={toggleMenu}>Home</Link>
             <Link to="/about" onClick={toggleMenu}>About us</Link>
             <Link to="/products" onClick={toggleMenu}>Products</Link>
@@ -69,7 +73,7 @@ const Header = () => {
 
             <hr />
             <Link to="/brands" onClick={toggleMenu}>Brands</Link>
-            <Link to="/gallery" onClick={toggleMenu}>Gallery</Link> {/* ✅ Added Gallery */}
+            {/* ✅ Added Gallery */}
             <Link to="/contact" onClick={toggleMenu}>Contact Us</Link>
           </div>
 
